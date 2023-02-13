@@ -1,7 +1,7 @@
 import 'semantic-ui-css/semantic.min.css'
 
 import React, { useState, useEffect } from "react";
-import todos from "./apis";
+import films from "./apis";
 
 import Form from "./components/Form";
 import Section from "./components/Section";
@@ -11,11 +11,11 @@ import Flor from "./assets/Floriculture.jpg"
 const appTitle="Flores del Tambo";
 
 const App=() => {
-  const [todoList, setTodoList]=useState([]);
+  const [filmsList, setTodoList]=useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const { data }=await todos.get("/todos");
+      const { data }=await films.get("/films");
       setTodoList(data);
     }
 
@@ -23,17 +23,17 @@ const App=() => {
   }, []);
 
   const addTodo=async (item) => {
-    const { data }=await todos.post("/todos", item);
+    const { data }=await films.post("/films", item);
     setTodoList((oldList) => [...oldList, data]);
   };
 
   const removeTodo=async (id) => {
-    await todos.delete(`/todos/${id}`);
+    await films.delete(`/films/${id}`);
     setTodoList((oldList) => oldList.filter((item) => item._id!==id));
   };
 
   const editTodo=async (id, item) => {
-    await todos.put(`/todos/${id}`, item);
+    await films.put(`/films/${id}`, item);
   };
 
   return (
@@ -52,7 +52,7 @@ const App=() => {
         <List
           editTodoListProp={editTodo}
           removeTodoListProp={removeTodo}
-          list={todoList}
+          list={filmsList}
         />
       </Section>
     </div>

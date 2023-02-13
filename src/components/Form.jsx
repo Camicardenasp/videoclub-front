@@ -25,7 +25,7 @@ const Form = ({ addTodo }) => {
                             value={inputValue}
                             onChange={handleInputChange}
                             type="text"
-                            placeholder="Agrega una tarea diaria de siembra"
+                            placeholder="Agrega el título de una película"
                         />
                     </div>
                     

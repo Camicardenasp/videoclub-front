@@ -8,7 +8,7 @@ import Section from "./components/Section";
 import List from "./components/List";
 import Flor from "./assets/Floriculture.jpg"
 
-const appTitle="Flores del Tambo";
+const appTitle="VideoClub";
 
 const App=() => {
   const [filmsList, setTodoList]=useState([]);
@@ -40,8 +40,8 @@ const App=() => {
     <div className="ui container center aligned" style={{backgroundImage: Flor}}>
       <Section>
         <h1>{appTitle}</h1>
-        <img src="/vite.png" alt="" style={{maxHeight: "80px", paddingTop: "10px"}}/>
-        <h3>Lista de Tareas Diarias</h3>
+        <img src="/vite.svg" alt="" style={{maxHeight: "80px", paddingTop: "10px"}}/>
+        <h3>Registro de Películas</h3>
       </Section>
 
       <Section>

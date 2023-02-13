@@ -30,7 +30,7 @@ const Form = ({ addTodo }) => {
                     </div>
                     
                     <div className="column two wide">
-                        <button type="submit" className="ui button circular icon pink"><i className="white plus icon"></i></button>
+                        <button type="submit" className="ui button circular icon blue"><i className="white plus icon"></i></button>
                     </div>
                 </div>
             </div>

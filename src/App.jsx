@@ -85,7 +85,7 @@ const App=() => {
       </Section>
 
       <Section>
-        <p >En esta sección puedes ver (<b style={{ color: "cyan" }}>Read</b>) y editar (<b style={{ color: "cyan" }}>Update</b>) registros de películas dando doble click sobre la información que desees editar y una vez termines puedes guardar los cambio oprimiendo la tecla enter. También puedes eliminar (<b style={{ color: "cyan" }}>Delete</b> ) registros completos de películas</p>
+        <p >En esta sección puedes ver (<b style={{ color: "cyan" }}>Read</b>) y editar (<b style={{ color: "cyan" }}>Update</b>) registros de películas dando doble click sobre la información que desees editar y una vez termines puedes guardar los cambios oprimiendo la tecla enter. También puedes eliminar (<b style={{ color: "cyan" }}>Delete</b> ) registros completos de películas</p>
         <i>(<b style={{ color: "cyan" }}>CRUD</b>, por sus siglas en inglés Create, Read, Update, Delete)</i>
       </Section>
       

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Todo = ({ title, year, completed, removeTodoItemProp, editTodoItemProp }) => {
+const Delete = ({ title, year, time, language, release, country, completed, removeTodoItemProp, editTodoItemProp }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(title);
     const [tempValue, setTempValue] = useState(title);
@@ -37,6 +37,7 @@ const Todo = ({ title, year, completed, removeTodoItemProp, editTodoItemProp }) 
 
     return (
         <div className="row">
+
             {
             isEditing ?
                 <div className="column seven wide">
@@ -50,20 +51,18 @@ const Todo = ({ title, year, completed, removeTodoItemProp, editTodoItemProp }) 
                     </div>
                 </div> :
                 <>
-                    <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
-                        <h4 className={"ui header" + (completedState ? " green" : "")}>{value}</h4>
-                        
-                        <h4>{year}</h4>
+                    <div className="" onDoubleClick={handleDivDoubleClick}>
+                        <h4 className={"ui header" + (completedState ? " green" : "white")}>{value}</h4>
                     </div>
 
-                    <div className="column one wide">
+                    {/* <div className="column one wide">
                         <button
                             className={"ui button circular icon" + (completedState ? " green " : " grey")}
                             onClick={handleButtonClick}
                         >
                             <i className="white check icon"></i>
                         </button>
-                    </div>
+                    </div> */}
 
                     <div className="column one wide">
                         <button
@@ -79,4 +78,4 @@ const Todo = ({ title, year, completed, removeTodoItemProp, editTodoItemProp }) 
     );
 };
 
-export default Todo;
+export default Delete;

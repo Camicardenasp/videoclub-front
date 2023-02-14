@@ -81,16 +81,18 @@ const App=() => {
       </Section>
 
       <Section>
-        <Form addTodo={addTodo} />
-      </Section>
-
-      <Section>
         <List
           editTodoListProp={editTodo}
           removeTodoListProp={removeTodo}
           list={filmsList}
         />
       </Section>
+      
+      <Section>
+        <Form addTodo={addTodo} />
+      </Section>
+
+      
 
       <footer>
         <p>Copyright &copy; {new Date().getFullYear()} <br/><b>Videoclub</b></p>

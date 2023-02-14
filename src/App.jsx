@@ -39,9 +39,16 @@ const App=() => {
   return (
     <div className="App">
       <header className='myheader flex' >
-        <img src="/vite.svg" alt="" style={{ maxHeight: "80px", paddingTop: "10px" }} />
-        <img src="/videoclub.png" alt="" style={{ maxHeight: "80px", paddingTop: "10px" }} />
+        <div>
+          <img src="/vite.svg" alt="" style={{ maxHeight: "80px"}} />
+          <img src="/videoclub.png" alt="" style={{ maxHeight: "40px", padding: "0 20px"}} />
+        </div>
+        <nav>
+          <a href="#">Lista de Películas</a>
+          <a href="#">Agregar Película</a>
+        </nav>
       </header>
+
       <Section>
         <h1>{appTitle}</h1>
       </Section>

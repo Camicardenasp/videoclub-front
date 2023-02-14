@@ -1,3 +1,7 @@
+#root {
+    background-color: black;
+} 
+
 .App {
     background-color: darkslategrey;
     color: whitesmoke;
@@ -10,10 +14,25 @@ header {
     background-color: #171A1B;
     position: sticky;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 10px;
 }
+
+header div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+
+header nav {
+    display: flex;
+}
+
+header nav a{
+    margin-right: 20px;
+}
+
 
 footer {
     width: 100%;

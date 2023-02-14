@@ -7,51 +7,7 @@ import Language from "./Language";
 import Release from "./Release";
 import Country from "./Country"
 
-const List = ({ list, title, year, time, language, release, country, completed, removeTodoListProp, editTodoListProp }) => {
-    const renderedList = list.map(
-        (item) => (
-            <Delete
-                title={item.title}
-                year={item.year}
-                time={item.time}
-                language={item.language}
-                release={item.release}
-                country={item.country}
-                completed={item.completed}
-                removeTodoItemProp={(e) => removeTodoListProp(item._id)}
-                editTodoItemProp={(updatedItem) => editTodoListProp(item._id, updatedItem)}
-                key={item.title}
-            />
-        )
-    );
-
-    const [isEditing, setIsEditing] = useState(false);
-    const [value, setValue] = useState(title);
-    const [tempValue, setTempValue] = useState(title);
-    const [completedState, setCompleted] = useState(completed);
-
-    const handleDivDoubleClick = () => {
-        setIsEditing(true);
-    };
-
-    const handleInputKeyDown = (e) => {
-        const key = e.keyCode;
-
-        if(key === 13) {
-            editTodoItemProp({ title: tempValue });
-            setValue(tempValue);
-            setIsEditing(false);
-        } else if(key === 27) {
-            setTempValue(value);
-            setIsEditing(false);
-        }
-    };
-
-    const handleInputOnChange = (e) => {
-        setTempValue(e.target.value);
-    };
-
-    const removeTodoItemProp = (e) => removeTodoListProp(item._id);
+const List = ({ list, removeTodoListProp, editTodoListProp }) => {
 
     return (
         <div className="ui grid center aligned">

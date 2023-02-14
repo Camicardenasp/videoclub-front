@@ -53,7 +53,7 @@ const App=() => {
           <img src="/videoclub.png" alt="" style={{ maxHeight: "40px", padding: "0 20px"}} />
         </div>
         
-          {width<=500? (
+          {/* {width<=500? (
           <nav className="nav">
             <button onClick={() => setIsOpen(!isOpen)} className="hamburger">
               <svg width="30" height="30" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ const App=() => {
           <a href="#" className="link">Lista de Películas</a>
           <a href="#" className="link">Agregar Película</a>
         </nav>
-          )}
+          )} */}
 {/*       
         {isOpen&&(
           <div className="menu">
@@ -77,9 +77,18 @@ const App=() => {
       </header>
 
       <Section>
-        <h1>{appTitle}</h1>
+        <h2>{appTitle}</h2>
       </Section>
 
+      <Section>
+        <h3 >Esta es la interfaz de la empresa Videoclub donde se puede leer, crear, modificar y eliminar registros de la base de datos de películas.</h3>
+      </Section>
+
+      <Section>
+        <p >En esta sección puedes ver (<b style={{ color: "cyan" }}>Read</b>) y editar (<b style={{ color: "cyan" }}>Update</b>) registros de películas dando doble click sobre la información que desees editar y una vez termines puedes guardar los cambio oprimiendo la tecla enter. También puedes eliminar (<b style={{ color: "cyan" }}>Delete</b> ) registros completos de películas</p>
+        <i>(<b style={{ color: "cyan" }}>CRUD</b>, por sus siglas en inglés Create, Read, Update, Delete)</i>
+      </Section>
+      
       <Section>
         <List
           editTodoListProp={editTodo}
@@ -89,10 +98,13 @@ const App=() => {
       </Section>
       
       <Section>
-        <Form addTodo={addTodo} />
+        <p >En esta sección puedes crear (<b style={{ color: "cyan" }}>Create</b> ) registros de películas llenando la información correspondiente en cada campo y oprimiento el botón "Agregar Película" para crear el registro.</p>
       </Section>
 
-      
+
+      <Section>
+        <Form addTodo={addTodo} />
+      </Section>
 
       <footer>
         <p>Copyright &copy; {new Date().getFullYear()} <br/><b>Videoclub</b></p>

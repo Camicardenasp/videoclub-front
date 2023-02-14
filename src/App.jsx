@@ -1,4 +1,5 @@
 import 'semantic-ui-css/semantic.min.css'
+import './App.css'
 
 import React, { useState, useEffect } from "react";
 import films from "./apis";
@@ -6,9 +7,8 @@ import films from "./apis";
 import Form from "./components/Form";
 import Section from "./components/Section";
 import List from "./components/List";
-import Flor from "./assets/Floriculture.jpg"
 
-const appTitle="VideoClub";
+const appTitle="Registro de Películas";
 
 const App=() => {
   const [filmsList, setTodoList]=useState([]);
@@ -37,11 +37,13 @@ const App=() => {
   };
 
   return (
-    <div className="ui container center aligned" style={{backgroundImage: Flor}}>
+    <div className="App">
+      <header className='myheader flex' >
+        <img src="/vite.svg" alt="" style={{ maxHeight: "80px", paddingTop: "10px" }} />
+        <img src="/videoclub.png" alt="" style={{ maxHeight: "80px", paddingTop: "10px" }} />
+      </header>
       <Section>
         <h1>{appTitle}</h1>
-        <img src="/vite.svg" alt="" style={{maxHeight: "80px", paddingTop: "10px"}}/>
-        <h3>Registro de Películas</h3>
       </Section>
 
       <Section>
@@ -55,6 +57,10 @@ const App=() => {
           list={filmsList}
         />
       </Section>
+
+      <footer>
+        <p>Copyright &copy; {new Date().getFullYear()} <br/><b>Videoclub</b></p>
+      </footer>
     </div>
   );
 };

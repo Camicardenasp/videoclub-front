@@ -1,35 +1,35 @@
 import React, { useState } from "react";
 
-const Title = ({ title, editTodoItemProp }) => {
+const Year =({ year, editTodoItemProp }) => {
 
-    const [isEditing, setIsEditing] = useState(false);
-    const [value, setValue] = useState(title);
-    const [tempValue, setTempValue] = useState(title);
+    const [isEditing, setIsEditing]=useState(false);
+    const [value, setValue]=useState(year);
+    const [tempValue, setTempValue]=useState(year);
 
-    const handleDivDoubleClick = () => {
+    const handleDivDoubleClick=() => {
         setIsEditing(true);
     };
 
-    const handleInputKeyDown = (e) => {
-        const key = e.keyCode;
+    const handleInputKeyDown=(e) => {
+        const key=e.keyCode;
 
-        if(key === 13) {
-            editTodoItemProp({ title: tempValue });
+        if (key===13) {
+            editTodoItemProp({ year: tempValue });
             setValue(tempValue);
             setIsEditing(false);
-        } else if(key === 27) {
+        } else if (key===27) {
             setTempValue(value);
             setIsEditing(false);
         }
     };
 
-    const handleInputOnChange = (e) => {
+    const handleInputOnChange=(e) => {
         setTempValue(e.target.value);
     };
-    
+
     return (
         <div className="row">
-            {isEditing ?
+            {isEditing?
                 <div className="column seven wide">
                     <div className="ui input fluid">
                         <input
@@ -39,7 +39,7 @@ const Title = ({ title, editTodoItemProp }) => {
                             value={tempValue}
                         />
                     </div>
-                </div> :
+                </div>:
                 <>
                     <div className="" onDoubleClick={handleDivDoubleClick}>
                         <h4>{value}</h4>
@@ -50,4 +50,4 @@ const Title = ({ title, editTodoItemProp }) => {
     );
 };
 
-export default Title;
+export default Year;

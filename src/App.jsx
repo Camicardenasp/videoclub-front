@@ -36,6 +36,15 @@ const App=() => {
     await films.put(`/films/${id}`, item);
   };
 
+  const [width, setWidth]=useState(window.innerWidth);
+  const [isOpen, setIsOpen]=useState(false);
+
+  useEffect(() => {
+    const handleResize=() => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="App">
       <header className='myheader flex' >
@@ -43,10 +52,28 @@ const App=() => {
           <img src="/vite.svg" alt="" style={{ maxHeight: "80px"}} />
           <img src="/videoclub.png" alt="" style={{ maxHeight: "40px", padding: "0 20px"}} />
         </div>
-        <nav>
-          <a href="#">Lista de Películas</a>
-          <a href="#">Agregar Película</a>
+        
+          {width<=500? (
+          <nav className="nav">
+            <button onClick={() => setIsOpen(!isOpen)} className="hamburger">
+              <svg width="30" height="30" viewBox="0 0 24 24">
+                <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z" />
+              </svg>
+            </button>
+          </nav>
+        ):(
+        <nav className="nav">
+          <a href="#" className="link">Lista de Películas</a>
+          <a href="#" className="link">Agregar Película</a>
         </nav>
+          )}
+{/*       
+        {isOpen&&(
+          <div className="menu">
+            <a href="#" className="link">Lista de Películas</a><br />
+            <a href="#" className="link">Agregar Película</a>
+          </div>
+        )} */}
       </header>
 
       <Section>

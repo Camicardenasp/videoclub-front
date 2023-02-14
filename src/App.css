@@ -25,12 +25,32 @@ header div {
         align-items: center;
 }
 
-header nav {
+.nav {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header nav a{
+.link {
     margin-right: 20px;
+}
+
+.hamburger {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu {
+    background-color: #252525;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    z-index: 1;
 }
 
 

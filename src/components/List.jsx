@@ -6,6 +6,7 @@ const List = ({ list, removeTodoListProp, editTodoListProp }) => {
         (item) => (
             <Todo
                 title={item.title}
+                year={item.year}
                 completed={item.completed}
                 removeTodoItemProp={(e) => removeTodoListProp(item._id)}
                 editTodoItemProp={(updatedItem) => editTodoListProp(item._id, updatedItem)}

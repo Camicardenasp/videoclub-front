@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
+const Todo = ({ title, year, completed, removeTodoItemProp, editTodoItemProp }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(title);
     const [tempValue, setTempValue] = useState(title);
@@ -52,6 +52,8 @@ const Todo = ({ title, completed, removeTodoItemProp, editTodoItemProp }) => {
                 <>
                     <div className="column five wide" onDoubleClick={handleDivDoubleClick}>
                         <h4 className={"ui header" + (completedState ? " green" : "")}>{value}</h4>
+                        
+                        <h4>{year}</h4>
                     </div>
 
                     <div className="column one wide">

@@ -85,8 +85,8 @@ const App=() => {
       </Section>
 
       <Section>
-        <p >En esta sección puedes ver (<b style={{ color: "cyan" }}>Read</b>) y editar (<b style={{ color: "cyan" }}>Update</b>) registros de películas dando doble click sobre la información que desees editar y una vez termines puedes guardar los cambios oprimiendo la tecla enter. También puedes eliminar (<b style={{ color: "cyan" }}>Delete</b> ) registros completos de películas</p>
-        <i>(<b style={{ color: "cyan" }}>CRUD</b>, por sus siglas en inglés Create, Read, Update, Delete)</i>
+        <p >En esta sección puedes ver (<b style={{ color: "cyan" }}>Read</b>) y editar (<b style={{ color: "cyan" }}>Update</b>) registros de películas dando doble click sobre la información que desees editar y una vez termines puedes guardar los cambios oprimiendo la tecla enter. También puedes eliminar (<b style={{ color: "cyan" }}>Delete</b>) registros completos de películas.</p>
+        <i>(<b style={{ color: "cyan" }}>CRUD</b>, por sus siglas en inglés Create, Read, Update, Delete).</i>
       </Section>
       
       <Section>
@@ -98,7 +98,7 @@ const App=() => {
       </Section>
       
       <Section>
-        <p >En esta sección puedes crear (<b style={{ color: "cyan" }}>Create</b> ) registros de películas llenando la información correspondiente en cada campo y oprimiento el botón "Agregar Película" para crear el registro.</p>
+        <p >En esta sección puedes crear (<b style={{ color: "cyan" }}>Create</b>) registros de películas llenando la información correspondiente en cada campo y oprimiento el botón "Agregar Película" para crear el registro.</p>
       </Section>
 
 

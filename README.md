@@ -1,6 +1,6 @@
 # DESCRIPTION MoviesList
 
-A simple and easy-to-use movies list application that helps you organize films and and keep track of them.
+A simple and easy-to-use movies list application that helps you organize films and keep track of them.
 
 Features
 

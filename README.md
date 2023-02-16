@@ -38,13 +38,17 @@ A movies list app made with React as front-end and Node, Express and MongoDB as 
 ## Note
 This app is aimed to be for testing only and is NOT meant to be deployed to production. It lacks request validation, security checks, error handlers and a lot more.
 
-# MERN Basics
+## Construccion de la aplicacion
 
-It comprises of `MongoDB`, `Express`, `React` and `Node`. <br><br>
-Of which `React` is used for **front-end development** <br>
-And `MongoDB`, `Express`, `Node` for **back-end development**
+Las librerias que se utilizaron para la construccion del proyecto son:
 
-## Getting Started
+* <a href="https://reactjs.org">![image](https://user-images.githubusercontent.com/50422794/211116164-7b79fadd-869a-43e3-8053-a224f080f9c2.png)</a>
+* <a href="https://expressjs.com/es/">![image](https://user-images.githubusercontent.com/50422794/215832140-54a86230-4ede-459c-82e3-5c05ee219f10.png)</a>
+* <a href="https://www.mongodb.com/">![image](https://user-images.githubusercontent.com/50422794/215832681-e822e2d6-ae97-4c63-9d0b-be6c36a2eda1.png)</a>
+* <a href="https://nodejs.org/es/">![image](https://user-images.githubusercontent.com/50422794/215834151-4c767188-7bfa-406e-9967-9c07dc4f737f.png)</a>
+* <a href="https://www.npmjs.com/package/axios">![image](https://user-images.githubusercontent.com/50422794/215833618-06eef285-0ac3-46be-ac0c-44bc311dc823.png)
+</a>
+
 ### Follow these steps while starting the project
 
 ###### 1.  Create two Folders
@@ -92,6 +96,5 @@ And `MongoDB`, `Express`, `Node` for **back-end development**
 Movies Form
 
 ![image](https://github.com/Camicardenasp/videoclub-front/blob/main/public/Readme%20Images/VideoClubForm.png)
-
 
 

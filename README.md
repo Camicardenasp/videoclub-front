@@ -1,40 +1,37 @@
-# DESCRIPTION ToDoList
+# DESCRIPTION MoivesList
 
-A simple and easy-to-use task management application that helps you stay organized and get things done.
+A simple and easy-to-use movies list application that helps you organize films and and keep track of them.
+
 Features
 
-   + Create and manage tasks with due dates and descriptions
-   + Mark tasks as complete or incomplete
-   + Edit and delete existing tasks
-   + Sort tasks by due date or creation date
-   + View completed tasks and easily re-activate them
+   + Create new movies register with different information
+   + Edit and delete existing movies
    + Responsive design for use on desktop and mobile devices
    
 # Usage
 
-To use ToDoList, simply follow these steps:
+To use MoviesList, simply follow these steps:
 
-    + Go to the ToDoList URL
-    + Create a new task by entering a task name, due date, and description (optional)
-    + Click "Add Task" to add the task to your list
+    + Go to the MoviesList URL
+    + See the previous movies registered
+    + Create a new register by entering a title, year, time, language, release date and country
+    + Click "Agregar Película" to add the movie to your list
     Repeat steps 2-3 to add additional tasks
-    + Use the checkboxes to mark tasks as complete or incomplete
-    + Use the "Edit" and "Delete" buttons to make changes to existing tasks
-    + Use the "Sort" dropdown to sort tasks by due date or creation date
-    + View completed tasks by clicking the "Show Completed" button
+    + Just double click the information you want to "Edit" 
+    + Use the "Delete" button to eliminate a register of some existing movie
 
 # INSTALATION
 
-# React Todo App
-A to-do list app made with React as front-end and Node, Express and MongoDB as back-end.
+# React MoviesList App
+A movies list app made with React as front-end and Node, Express and MongoDB as back-end.
 
 ## Front-End Installation
-1. `cd app`
+1. `cd videoclub-front`
 2. `npm install vite@latest`
 3. `npm run dev`
 
 ## Back-End Installation
-1. `cd backend`
+1. `cd videoclub-back`
 2. `npm install`
 3. `npm run dev` or `nodemon index`
 
@@ -52,7 +49,7 @@ And `MongoDB`, `Express`, `Node` for **back-end development**
 
 ###### 1.  Create two Folders
 
-    app (This contains all the back-end part)
+    frontend (This contains all the back-end part)
   
     backend (This contains all the front-end part)
   

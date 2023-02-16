@@ -1,17 +1,15 @@
-import React, { useState } from "react"; //Import Hook useState
+import React, { useState } from "react";
 
 const Country =({ country, editTodoItemProp }) => {
 
-    const [isEditing, setIsEditing]=useState(false); //isEditing is the variable that holds the current value to false and setIsEditing is used to update the state.
-    const [value, setValue] = useState(country); //value is the variable that contains the current state in country and setValue is used to update the state.
-    const [tempValue, setTempValue]=useState(country); //tempValue can be used to perform operations on the current value, while setTempValue is used to update the state.
+    const [isEditing, setIsEditing]=useState(false);
+    const [value, setValue]=useState(country);
+    const [tempValue, setTempValue]=useState(country);
 
-    //handleDivDoubleClick is a function used to allow editing of the content of an HTML element when a user double-clicks it. Updates the state of a component by setting isEditing to true.
     const handleDivDoubleClick=() => {
         setIsEditing(true);
     };
 
-    //handle Input KeyDown handles keyboard events on an HTML element, updating a task list element when "Enter" is pressed and restoring the previous value if "Esc" is pressed.
     const handleInputKeyDown=(e) => {
         const key=e.keyCode;
 
@@ -25,12 +23,10 @@ const Country =({ country, editTodoItemProp }) => {
         }
     };
 
-    //handleInputChange updates temp Value with the current value of an HTML input element when the onChange event occurs.
     const handleInputOnChange=(e) => {
         setTempValue(e.target.value);
     };
 
-    //Returns a component that displays a value in an editable div or input field depending on the value of isEditing, handling the onDoubleClick, onChange, and onKeyDown events.
     return (
         <div className="row">
             {isEditing?
@@ -54,4 +50,4 @@ const Country =({ country, editTodoItemProp }) => {
     );
 };
 
-export default Country; //Export component Country
+export default Country;

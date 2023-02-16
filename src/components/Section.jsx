@@ -1,6 +1,5 @@
-import React from "react";//Import Hook useState
+import React from "react";
 
-//Create reusable component
 const Section = ({ children }) => {
     return (
         <div style={{ margin: "50px" }}>
@@ -9,4 +8,4 @@ const Section = ({ children }) => {
     );
 };
 
-export default Section;//Export component Section
+export default Section;

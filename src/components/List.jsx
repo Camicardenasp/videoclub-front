@@ -1,13 +1,12 @@
-import React, { useState } from "react"; //Import Hook useState
-import Delete from "./Delete"; //Import Component Delete
-import Title from "./Title"; //Import Component Title
-import Year from "./Year"; //Import Component Year
-import Time from "./Time";  //Import Component Time
-import Language from "./Language"; //Import Component Language
-import Release from "./Release"; //Import Component Release
-import Country from "./Country" //Import Component Country
+import React, { useState } from "react";
+import Delete from "./Delete";
+import Title from "./Title";
+import Year from "./Year";
+import Time from "./Time";
+import Language from "./Language";
+import Release from "./Release";
+import Country from "./Country"
 
-//React component that displays a list of items in the form of a table with the option to edit and delete each item.
 const List = ({ list, removeTodoListProp, editTodoListProp }) => {
 
     return (
@@ -81,4 +80,4 @@ const List = ({ list, removeTodoListProp, editTodoListProp }) => {
     );
 };
 
-export default List;//Export component List
+export default List;

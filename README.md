@@ -84,3 +84,14 @@ And `MongoDB`, `Express`, `Node` for **back-end development**
         Just like regular react project use this to create default react files with Vite.
   
 ### Screenshots
+ 
+ Movies Table
+ 
+![image](https://github.com/Camicardenasp/videoclub-front/blob/main/public/Readme%20Images/VideoclubTable.png)
+
+Movies Form
+
+![image](https://github.com/Camicardenasp/videoclub-front/blob/main/public/Readme%20Images/VideoClubForm.png)
+
+
+

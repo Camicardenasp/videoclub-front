@@ -1,7 +1,6 @@
-import React, { useState } from "react";//Import Hook useState
+import React, { useState } from "react";
 
-//This is a form component in React that receives an addTodo prop and defines six states that represent the values of the form's fields.
-const Form = ({ addTodo }) => {
+const Form = ({ addFilm }) => {
     const [title, setTitle] = useState("");
     const [year, setYear]=useState("");
     const [time, setTime]=useState("");
@@ -29,10 +28,11 @@ const Form = ({ addTodo }) => {
         setCountry(e.target.value);
     };
 
-    //It is an event handler that handles the submission of the form. When the user submits the form, this event handler takes the current values of the form fields (title, year, duration, language, date, and country) and passes them to the addTodo method to add a new element.
+    //It is an event handler that handles the submission of the form. When the user submits the form, this event handler takes the current values of the form fields (title, year, duration, language, date, and country) and passes them to the addFilm method to add a new element.
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        addTodo({ title: title, year: year, time: time, language: language, release: release, country: country, completed: false });
+        // if(inputValue.trim() === "") return;
+        addFilm({ title: title, year: year, time: time, language: language, release: release, country: country, completed: false });
         setTitle("");
         setYear("");
         setTime("");
@@ -40,6 +40,15 @@ const Form = ({ addTodo }) => {
         setRelease("");
         setCountry("");
     };
+
+    const inputStyle = {
+            backgroundColor: "#00FFFF", // cian
+            color: "#FFFFFF", // blanco
+            padding: "10px 20px",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer"
+    }
     
     //Returns a form that allows adding a new movie to a list of movies
     return (
@@ -53,6 +62,7 @@ const Form = ({ addTodo }) => {
                             onChange={handleTitleChange}
                             type="text"
                             placeholder="Agrega el título de la película"
+                            style={{ backgroundColor: "transparent", border: "2px solid", color: "white", margin: "1px" }}
                         />
                         <input
                             className="input"

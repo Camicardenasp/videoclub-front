@@ -11,25 +11,28 @@ import List from "./components/List";
 const appTitle="Registro de Películas";
 
 const App=() => {
-  const [filmsList, setTodoList]=useState([]);
+  const [filmsList, setFilmsList]=useState([]);
+  const [search, setSearch]=useState([]);
+  const [filmsListSearched, setFilmsListSearched]=useState([]);
 
   useEffect(() => {
     async function fetchData() {
       const { data }=await films.get("/films");
-      setTodoList(data);
+      setFilmsList(data);
+      setFilmsListSearched(filmsList);
     }
 
     fetchData();
   }, []);
 
-  const addTodo=async (item) => {
+  const addFilm=async (item) => {
     const { data }=await films.post("/films", item);
-    setTodoList((oldList) => [...oldList, data]);
+    setFilmsList((oldList) => [...oldList, data]);
   };
 
-  const removeTodo=async (id) => {
+  const removeFilm=async (id) => {
     await films.delete(`/films/${id}`);
-    setTodoList((oldList) => oldList.filter((item) => item._id!==id));
+    setFilmsList((oldList) => oldList.filter((item) => item._id!==id));
   };
 
   const editTodo=async (id, item) => {
@@ -44,6 +47,23 @@ const App=() => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const handleChangeSearch = e => {
+    setSearch(e.target.value);
+    filtering(e.target.value);
+  }
+
+
+
+  const filtering = (searchTerm) => {
+    var searchResult = filmsList.filter((element)=>{
+      if(element.title.toString().toLowerCase().includes(searchTerm.toLowerCase())){
+        return element;
+      }
+    })
+    setFilmsListSearched(searchResult);
+  }
+
 
   return (
     <div className="App">
@@ -90,20 +110,33 @@ const App=() => {
       </Section>
       
       <Section>
+        <input
+          type="text"
+          value={search}
+          placeholder="Buscar por título"
+          onChange={handleChangeSearch}
+          className="ui button circular icon"
+          style={{ backgroundColor: "transparent", border: "2px solid cyan", color: "cyan" }}
+        />
+      </Section>
+
+      <Section>
         <List
           editTodoListProp={editTodo}
-          removeTodoListProp={removeTodo}
-          list={filmsList}
+          removeTodoListProp={removeFilm}
+          list={filmsListSearched}
         />
       </Section>
       
+      
+
       <Section>
         <p >En esta sección puedes crear (<b style={{ color: "cyan" }}>Create</b>) registros de películas llenando la información correspondiente en cada campo y oprimiento el botón "Agregar Película" para crear el registro.</p>
       </Section>
 
 
       <Section>
-        <Form addTodo={addTodo} />
+        <Form addFilm={addFilm} />
       </Section>
 
       <footer>

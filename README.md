@@ -38,9 +38,9 @@ A movies list app made with React as front-end and Node, Express and MongoDB as 
 ## Note
 This app is aimed to be for testing only and is NOT meant to be deployed to production. It lacks request validation, security checks, error handlers and a lot more.
 
-## Construccion de la aplicacion
+## Building the de application
 
-Las librerias que se utilizaron para la construccion del proyecto son:
+The libraries that were used for the construction of the project are:
 
 * <a href="https://reactjs.org">![image](https://user-images.githubusercontent.com/50422794/211116164-7b79fadd-869a-43e3-8053-a224f080f9c2.png)</a>
 * <a href="https://expressjs.com/es/">![image](https://user-images.githubusercontent.com/50422794/215832140-54a86230-4ede-459c-82e3-5c05ee219f10.png)</a>
@@ -48,7 +48,6 @@ Las librerias que se utilizaron para la construccion del proyecto son:
 * <a href="https://nodejs.org/es/">![image](https://user-images.githubusercontent.com/50422794/215834151-4c767188-7bfa-406e-9967-9c07dc4f737f.png)</a>
 * <a href="https://www.npmjs.com/package/axios">![image](https://user-images.githubusercontent.com/50422794/215833618-06eef285-0ac3-46be-ac0c-44bc311dc823.png)
 </a>
-
 ### Follow these steps while starting the project
 
 ###### 1.  Create two Folders

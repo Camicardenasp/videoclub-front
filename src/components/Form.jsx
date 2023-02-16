@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from "react";//Import Hook useState
 
+//This is a form component in React that receives an addTodo prop and defines six states that represent the values of the form's fields.
 const Form = ({ addTodo }) => {
     const [title, setTitle] = useState("");
     const [year, setYear]=useState("");
@@ -8,6 +9,7 @@ const Form = ({ addTodo }) => {
     const [release, setRelease]=useState("");
     const [country, setCountry]=useState("");
 
+    //Handling changes in input and submission of the form.
     const handleTitleChange = (e) => {
         setTitle(e.target.value);
     };
@@ -27,11 +29,9 @@ const Form = ({ addTodo }) => {
         setCountry(e.target.value);
     };
 
+    //It is an event handler that handles the submission of the form. When the user submits the form, this event handler takes the current values of the form fields (title, year, duration, language, date, and country) and passes them to the addTodo method to add a new element.
     const handleFormSubmit = (e) => {
         e.preventDefault();
-
-        // if(inputValue.trim() === "") return;
-
         addTodo({ title: title, year: year, time: time, language: language, release: release, country: country, completed: false });
         setTitle("");
         setYear("");
@@ -41,6 +41,7 @@ const Form = ({ addTodo }) => {
         setCountry("");
     };
     
+    //Returns a form that allows adding a new movie to a list of movies
     return (
         <form className="ui form" onSubmit={handleFormSubmit}>
             <div className="ui center aligned">
@@ -99,4 +100,4 @@ const Form = ({ addTodo }) => {
     );
 };
 
-export default Form;
+export default Form;.00//Export component Form

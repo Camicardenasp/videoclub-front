@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useState } from "react";//Import Hook useState
 
 const Delete = ({ title, year, time, language, release, country, completed, removeTodoItemProp, editTodoItemProp }) => {
-    const [isEditing, setIsEditing] = useState(false);
-    const [value, setValue] = useState(title);
-    const [tempValue, setTempValue] = useState(title);
+    const [isEditing, setIsEditing] = useState(false); //isEditing is the variable that holds the current value to false and setIsEditing is used to update the used state.
+    const [value, setValue] = useState(title); //value is the variable that contains the current state in title and setValue is used tate.
+    const [tempValue, setTempValue] = useState(title); //tempValue can be used to perform operations on the current value, while setTempValue is used used state.
     const [completedState, setCompleted] = useState(completed);
 
+    //handleDivDoubleClick is a function used to allow editing of the content of an HTML element when a user double-clicks it. Updates the state of a component by setting isEditing to true.
     const handleDivDoubleClick = () => {
         setIsEditing(true);
     };
 
+    //handle Input KeyDown handles keyboard events on an HTML element, updating a task list element when "Enter" is pressed and restoring the previous value if "Esc" is pressed.
     const handleInputKeyDown = (e) => {
         const key = e.keyCode;
 
@@ -26,7 +28,8 @@ const Delete = ({ title, year, time, language, release, country, completed, remo
     const handleInputOnChange = (e) => {
         setTempValue(e.target.value);
     };
-
+    
+    //Change the status of a movie, if it has already been watched
     const handleButtonClick = () => {
         setCompleted((oldCompleted) => {
             const newState = !oldCompleted;
@@ -34,6 +37,9 @@ const Delete = ({ title, year, time, language, release, country, completed, remo
             return newState;
         });
     };
+
+
+    
 
     return (
         <div className="row">
@@ -64,4 +70,4 @@ const Delete = ({ title, year, time, language, release, country, completed, remo
     );
 };
 
-export default Delete;
+export default Delete;//Export component Delete

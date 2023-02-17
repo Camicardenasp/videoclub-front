@@ -76,7 +76,7 @@ const Form = ({ addFilm }) => {
                             className="input"
                             value={year}
                             onChange={handleYearChange}
-                            type="text"
+                            type="number"
                             placeholder="Agrega el año de la película"
                             style={{ backgroundColor: "transparent", border: "2px solid white", color: "white", textAlign: "center", margin: "2px" }}
                         />
@@ -84,7 +84,7 @@ const Form = ({ addFilm }) => {
                             className="input"
                             value={time}
                             onChange={handleTimeChange}
-                            type="text"
+                            type="number"
                             placeholder="Agrega la duración de la película"
                             style={{ backgroundColor: "transparent", border: "2px solid white", color: "white", textAlign: "center", margin: "2px" }}
                         />
@@ -100,7 +100,7 @@ const Form = ({ addFilm }) => {
                             className="input"
                             value={release}
                             onChange={handleReleaseChange}
-                            type="text"
+                            type="date"
                             placeholder="Agrega la fecha de lanzamiento de la película"
                             style={{ backgroundColor: "transparent", border: "2px solid white", color: "white", textAlign: "center", margin: "2px" }}
                         />

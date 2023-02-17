@@ -82,18 +82,7 @@ const App=() => {
       </Section>
 
       <Section>
-        <h3 >Esta es la interfaz de la empresa Videoclub donde se puede leer, crear, modificar y eliminar registros de la base de datos de películas.</h3>
-      </Section>
-
-      <Section>
-        <input
-          type="text"
-          value={search}
-          placeholder="Buscar por título"
-          onChange={handleChangeSearch}
-          className="ui button circular icon"
-          style={{ backgroundColor: "transparent", border: "2px solid cyan", color: "cyan" }}
-        />
+        <h3 >Esta es la interfaz de la empresa Videoclub donde se pueden leer, crear, modificar y eliminar registros de la base de datos de películas.</h3>
       </Section>
 
       <Section>
@@ -101,6 +90,17 @@ const App=() => {
         <i>(<b style={{ color: "cyan" }}>CRUD</b>, por sus siglas en inglés Create, Read, Update, Delete).</i>
       </Section>
       
+      <Section>
+        <input
+          type="text"
+          value={search}
+          placeholder="Buscar por título"
+          onChange={handleChangeSearch}
+          className="ui input circular icon"
+          style={{ backgroundColor: "transparent", border: "2px solid cyan", color: "cyan", textAlign: "center", padding: "17px", borderRadius: "30px" }}
+        />
+      </Section>
+
       <Section>
         <List
           editFilmListProp={editFilm}

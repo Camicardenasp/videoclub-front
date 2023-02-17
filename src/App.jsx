@@ -28,11 +28,15 @@ const App=() => {
   const addFilm=async (item) => {
     const { data }=await films.post("/films", item);
     setFilmsList((oldList) => [...oldList, data]);
+    setFilmsListSearched((oldList) => [...oldList, data]);
+
   };
 
   const removeFilm=async (id) => {
     await films.delete(`/films/${id}`);
     setFilmsList((oldList) => oldList.filter((item) => item._id!==id));
+    setFilmsListSearched((oldList) => oldList.filter((item) => item._id!==id));
+
   };
 
   const editFilm=async (id, item) => {
@@ -60,12 +64,7 @@ const App=() => {
         return element;
       }
     });
-    if (searchTerm==="") {
-      setFilmsListSearched(filmsList);
-    } else {
       setFilmsListSearched(searchResult);
-    }
-    
   }
 
   return (

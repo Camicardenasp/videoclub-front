@@ -17,7 +17,7 @@ const App=() => {
 
   useEffect(() => {
     async function fetchData() {
-      const { data }=await films.get("/films");
+      const { data }= await films.get("/films");
       setFilmsList(data);
       setFilmsListSearched(filmsList);
     }
@@ -54,13 +54,12 @@ const App=() => {
   }
 
 
-
   const filtering=(searchTerm) => {
     var searchResult=filmsList.filter((element) => {
       if (element.title.toString().toLowerCase().includes(searchTerm.toLowerCase())) {
         return element;
       }
-    })
+    });
     if (searchTerm==="") {
       setFilmsListSearched(filmsList);
     } else {
@@ -104,9 +103,9 @@ const App=() => {
       
       <Section>
         <List
-          editTodoListProp={editFilm}
-          removeTodoListProp={removeFilm}
-          list={filmsListSearched}
+          editFilmListProp={editFilm}
+          removeFilmListProp={removeFilm}
+          list={filmsListSearched==""? filmsList : filmsListSearched}
         />
       </Section>
       

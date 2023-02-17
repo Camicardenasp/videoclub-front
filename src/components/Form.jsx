@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Form = ({ addTodo }) => {
+const Form = ({ addFilm }) => {
     const [title, setTitle] = useState("");
     const [year, setYear]=useState("");
     const [time, setTime]=useState("");
@@ -32,7 +32,7 @@ const Form = ({ addTodo }) => {
 
         // if(inputValue.trim() === "") return;
 
-        addTodo({ title: title, year: year, time: time, language: language, release: release, country: country, completed: false });
+        addFilm({ title: title, year: year, time: time, language: language, release: release, country: country, completed: false });
         setTitle("");
         setYear("");
         setTime("");

@@ -11,28 +11,31 @@ import List from "./components/List";
 const appTitle="Registro de Películas";
 
 const App=() => {
-  const [filmsList, setTodoList]=useState([]);
+  const [filmsList, setFilmsList]=useState([]);
+  const [search, setSearch]=useState([]);
+  const [filmsListSearched, setFilmsListSearched]=useState([]);
 
   useEffect(() => {
     async function fetchData() {
       const { data }=await films.get("/films");
-      setTodoList(data);
+      setFilmsList(data);
+      setFilmsListSearched(filmsList);
     }
 
     fetchData();
   }, []);
 
-  const addTodo=async (item) => {
+  const addFilm=async (item) => {
     const { data }=await films.post("/films", item);
-    setTodoList((oldList) => [...oldList, data]);
+    setFilmsList((oldList) => [...oldList, data]);
   };
 
-  const removeTodo=async (id) => {
+  const removeFilm=async (id) => {
     await films.delete(`/films/${id}`);
-    setTodoList((oldList) => oldList.filter((item) => item._id!==id));
+    setFilmsList((oldList) => oldList.filter((item) => item._id!==id));
   };
 
-  const editTodo=async (id, item) => {
+  const editFilm=async (id, item) => {
     await films.put(`/films/${id}`, item);
   };
 
@@ -45,6 +48,27 @@ const App=() => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleChangeSearch=e => {
+    setSearch(e.target.value);
+    filtering(e.target.value);
+  }
+
+
+
+  const filtering=(searchTerm) => {
+    var searchResult=filmsList.filter((element) => {
+      if (element.title.toString().toLowerCase().includes(searchTerm.toLowerCase())) {
+        return element;
+      }
+    })
+    if (searchTerm==="") {
+      setFilmsListSearched(filmsList);
+    } else {
+      setFilmsListSearched(searchResult);
+    }
+    
+  }
+
   return (
     <div className="App">
       <header className='myheader flex' >
@@ -52,28 +76,6 @@ const App=() => {
           <img src="/vite.svg" alt="" style={{ maxHeight: "80px"}} />
           <img src="/videoclub.png" alt="" style={{ maxHeight: "40px", padding: "0 20px"}} />
         </div>
-        
-          {/* {width<=500? (
-          <nav className="nav">
-            <button onClick={() => setIsOpen(!isOpen)} className="hamburger">
-              <svg width="30" height="30" viewBox="0 0 24 24">
-                <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z" />
-              </svg>
-            </button>
-          </nav>
-        ):(
-        <nav className="nav">
-          <a href="#" className="link">Lista de Películas</a>
-          <a href="#" className="link">Agregar Película</a>
-        </nav>
-          )} */}
-{/*       
-        {isOpen&&(
-          <div className="menu">
-            <a href="#" className="link">Lista de Películas</a><br />
-            <a href="#" className="link">Agregar Película</a>
-          </div>
-        )} */}
       </header>
 
       <Section>
@@ -85,15 +87,26 @@ const App=() => {
       </Section>
 
       <Section>
+        <input
+          type="text"
+          value={search}
+          placeholder="Buscar por título"
+          onChange={handleChangeSearch}
+          className="ui button circular icon"
+          style={{ backgroundColor: "transparent", border: "2px solid cyan", color: "cyan" }}
+        />
+      </Section>
+
+      <Section>
         <p >En esta sección puedes ver (<b style={{ color: "cyan" }}>Read</b>) y editar (<b style={{ color: "cyan" }}>Update</b>) registros de películas dando doble click sobre la información que desees editar y una vez termines puedes guardar los cambios oprimiendo la tecla enter. También puedes eliminar (<b style={{ color: "cyan" }}>Delete</b>) registros completos de películas.</p>
         <i>(<b style={{ color: "cyan" }}>CRUD</b>, por sus siglas en inglés Create, Read, Update, Delete).</i>
       </Section>
       
       <Section>
         <List
-          editTodoListProp={editTodo}
-          removeTodoListProp={removeTodo}
-          list={filmsList}
+          editTodoListProp={editFilm}
+          removeTodoListProp={removeFilm}
+          list={filmsListSearched}
         />
       </Section>
       
@@ -103,7 +116,7 @@ const App=() => {
 
 
       <Section>
-        <Form addTodo={addTodo} />
+        <Form addFilm={addFilm} />
       </Section>
 
       <footer>

@@ -7,7 +7,7 @@ import Language from "./Language";
 import Release from "./Release";
 import Country from "./Country"
 
-const List = ({ list, removeTodoListProp, editTodoListProp }) => {
+const List = ({ list, removeFilmListProp, editFilmListProp }) => {
 
     return (
         <div className="ui grid center aligned">
@@ -29,46 +29,46 @@ const List = ({ list, removeTodoListProp, editTodoListProp }) => {
                             <td>
                                 <Title
                                 title={item.title}
-                                editTodoItemProp={(updatedItem) => editTodoListProp(item._id, updatedItem)} 
+                                editFilmItemProp={(updatedItem) => editFilmListProp(item._id, updatedItem)} 
                                 />
                             </td>
 
                             <td>
                                 <Year
                                 year={item.year}
-                                editTodoItemProp={(updatedItem) => editTodoListProp(item._id, updatedItem)}
+                                editFilmItemProp={(updatedItem) => editFilmListProp(item._id, updatedItem)}
                                 />
                             </td>
                             <td>
                                 <Time
                                     time={item.time}
-                                    editTodoItemProp={(updatedItem) => editTodoListProp(item._id, updatedItem)}
+                                    editFilmItemProp={(updatedItem) => editFilmListProp(item._id, updatedItem)}
                                 />
                             </td>
                             <td>
                                 <Language
                                     language={item.language}
-                                    editTodoItemProp={(updatedItem) => editTodoListProp(item._id, updatedItem)}
+                                    editFilmItemProp={(updatedItem) => editFilmListProp(item._id, updatedItem)}
                                 />
                             </td>
                             <td>
                                 <Release
                                     release={item.release}
-                                    editTodoItemProp={(updatedItem) => editTodoListProp(item._id, updatedItem)}
+                                    editFilmItemProp={(updatedItem) => editFilmListProp(item._id, updatedItem)}
                                 />
                             </td>
                             <td>
                                 <Country
                                     country={item.country}
-                                    editTodoItemProp={(updatedItem) => editTodoListProp(item._id, updatedItem)}
+                                    editFilmItemProp={(updatedItem) => editFilmListProp(item._id, updatedItem)}
                                 />
                             </td>
                             <td>
                                 <Delete
                                     title={item.title}
                                     completed={item.completed}
-                                    removeTodoItemProp={(e) => removeTodoListProp(item._id)}
-                                    editTodoItemProp={(updatedItem) => editTodoListProp(item._id, updatedItem)}
+                                    removeFilmItemProp={(e) => removeFilmListProp(item._id)}
+                                    editFilmItemProp={(updatedItem) => editFilmListProp(item._id, updatedItem)}
                                     key={item.title}
                                 />
                             </td>

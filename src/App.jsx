@@ -19,7 +19,6 @@ const App=() => {
     async function fetchData() {
       const { data }= await films.get("/films");
       setFilmsList(data);
-      setFilmsListSearched(filmsList);
     }
 
     fetchData();
@@ -29,14 +28,12 @@ const App=() => {
     const { data }=await films.post("/films", item);
     setFilmsList((oldList) => [...oldList, data]);
     setFilmsListSearched((oldList) => [...oldList, data]);
-
   };
 
   const removeFilm=async (id) => {
     await films.delete(`/films/${id}`);
     setFilmsList((oldList) => oldList.filter((item) => item._id!==id));
     setFilmsListSearched((oldList) => oldList.filter((item) => item._id!==id));
-
   };
 
   const editFilm=async (id, item) => {

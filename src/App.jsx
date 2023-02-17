@@ -49,11 +49,11 @@ const App=() => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleChangeSearch=e => {
+
+  const handleChangeSearch= e => {
     setSearch(e.target.value);
     filtering(e.target.value);
   }
-
 
   const filtering=(searchTerm) => {
     var searchResult=filmsList.filter((element) => {
@@ -105,6 +105,8 @@ const App=() => {
         />
       </Section>
       
+      
+
       <Section>
         <p >En esta sección puedes crear (<b style={{ color: "cyan" }}>Create</b>) registros de películas llenando la información correspondiente en cada campo y oprimiento el botón "Agregar Película" para crear el registro.</p>
       </Section>

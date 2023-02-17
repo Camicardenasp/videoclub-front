@@ -8,6 +8,7 @@ const Form = ({ addFilm }) => {
     const [release, setRelease]=useState("");
     const [country, setCountry]=useState("");
 
+    //Handling changes in input and submission of the form.
     const handleTitleChange = (e) => {
         setTitle(e.target.value);
     };
@@ -27,11 +28,11 @@ const Form = ({ addFilm }) => {
         setCountry(e.target.value);
     };
 
+    //It is an event handler that handles the submission of the form. When the user submits the form, this event handler takes the current values of the form fields (title, year, duration, language, date, and country) and passes them to the addFilm method to add a new element.
     const handleFormSubmit = (e) => {
         e.preventDefault();
-
         // if(inputValue.trim() === "") return;
-
+        
         addFilm({ title: title, year: year, time: time, language: language, release: release, country: country, completed: false });
         setTitle("");
         setYear("");
@@ -40,7 +41,17 @@ const Form = ({ addFilm }) => {
         setRelease("");
         setCountry("");
     };
+
+    const inputStyle = {
+            backgroundColor: "#00FFFF", // cian
+            color: "#FFFFFF", // blanco
+            padding: "10px 20px",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer"
+    }
     
+    //Returns a form that allows adding a new movie to a list of movies
     return (
         <form className="ui form" onSubmit={handleFormSubmit}>
             <div className="ui center aligned">
@@ -53,6 +64,7 @@ const Form = ({ addFilm }) => {
                             type="text"
                             placeholder="Agrega el título de la película"
                             style={{ backgroundColor: "transparent", border: "2px solid white", color: "white", textAlign: "center", margin: "2px" }}
+
                         />
                         <input
                             className="input"
@@ -105,4 +117,4 @@ const Form = ({ addFilm }) => {
     );
 };
 
-export default Form;
+export default Form;.00//Export component Form

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
-const Delete = ({ title, year, time, language, release, country, completed, removeTodoItemProp, editTodoItemProp }) => {
+const Delete = ({ title, removeFilmItemProp, editFilmItemProp }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(title);
     const [tempValue, setTempValue] = useState(title);
-    const [completedState, setCompleted] = useState(completed);
 
     const handleDivDoubleClick = () => {
         setIsEditing(true);
@@ -14,7 +13,7 @@ const Delete = ({ title, year, time, language, release, country, completed, remo
         const key = e.keyCode;
 
         if(key === 13) {
-            editTodoItemProp({ title: tempValue });
+            editFilmItemProp({ title: tempValue });
             setValue(tempValue);
             setIsEditing(false);
         } else if(key === 27) {
@@ -30,7 +29,7 @@ const Delete = ({ title, year, time, language, release, country, completed, remo
     const handleButtonClick = () => {
         setCompleted((oldCompleted) => {
             const newState = !oldCompleted;
-            editTodoItemProp({ completed: newState });
+            editFilmItemProp({ completed: newState });
             return newState;
         });
     };
@@ -52,7 +51,7 @@ const Delete = ({ title, year, time, language, release, country, completed, remo
                 <>
                     <div className="column one wide">
                         <button
-                            onClick={removeTodoItemProp}
+                            onClick={removeFilmItemProp}
                             className="ui button circular icon"
                         >
                             <i className="white remove icon"></i>

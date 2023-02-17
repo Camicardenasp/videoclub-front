@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Language = ({ language, editTodoItemProp }) => {
+const Language = ({ language, editFilmItemProp }) => {
 
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(language);
@@ -14,7 +14,7 @@ const Language = ({ language, editTodoItemProp }) => {
         const key = e.keyCode;
 
         if(key === 13) {
-            editTodoItemProp({ language: tempValue });
+            editFilmItemProp({ language: tempValue });
             setValue(tempValue);
             setIsEditing(false);
         } else if(key === 27) {

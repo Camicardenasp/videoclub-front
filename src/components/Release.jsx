@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Release =({ release, editTodoItemProp }) => {
+const Release =({ release, editFilmItemProp }) => {
 
     const [isEditing, setIsEditing]=useState(false);
     const [value, setValue]=useState(release);
@@ -14,7 +14,7 @@ const Release =({ release, editTodoItemProp }) => {
         const key=e.keyCode;
 
         if (key===13) {
-            editTodoItemProp({ release: tempValue });
+            editFilmItemProp({ release: tempValue });
             setValue(tempValue);
             setIsEditing(false);
         } else if (key===27) {

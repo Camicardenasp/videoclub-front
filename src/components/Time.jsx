@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Time = ({ time, editTodoItemProp }) => {
+const Time = ({ time, editFilmItemProp }) => {
 
     const [isEditing, setIsEditing] = useState(false);
     const [value, setValue] = useState(time);
@@ -14,7 +14,7 @@ const Time = ({ time, editTodoItemProp }) => {
         const key = e.keyCode;
 
         if(key === 13) {
-            editTodoItemProp({ time: tempValue });
+            editFilmItemProp({ time: tempValue });
             setValue(tempValue);
             setIsEditing(false);
         } else if(key === 27) {

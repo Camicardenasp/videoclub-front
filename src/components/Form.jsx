@@ -32,6 +32,7 @@ const Form = ({ addFilm }) => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         // if(inputValue.trim() === "") return;
+        
         addFilm({ title: title, year: year, time: time, language: language, release: release, country: country, completed: false });
         setTitle("");
         setYear("");
@@ -62,7 +63,8 @@ const Form = ({ addFilm }) => {
                             onChange={handleTitleChange}
                             type="text"
                             placeholder="Agrega el título de la película"
-                            style={{ backgroundColor: "transparent", border: "2px solid", color: "white", margin: "1px" }}
+                            style={{ backgroundColor: "transparent", border: "2px solid white", color: "white", textAlign: "center", margin: "2px" }}
+
                         />
                         <input
                             className="input"
@@ -70,6 +72,7 @@ const Form = ({ addFilm }) => {
                             onChange={handleYearChange}
                             type="text"
                             placeholder="Agrega el año de la película"
+                            style={{ backgroundColor: "transparent", border: "2px solid white", color: "white", textAlign: "center", margin: "2px" }}
                         />
                         <input
                             className="input"
@@ -77,6 +80,7 @@ const Form = ({ addFilm }) => {
                             onChange={handleTimeChange}
                             type="text"
                             placeholder="Agrega la duración de la película"
+                            style={{ backgroundColor: "transparent", border: "2px solid white", color: "white", textAlign: "center", margin: "2px" }}
                         />
                         <input
                             className="input"
@@ -84,6 +88,7 @@ const Form = ({ addFilm }) => {
                             onChange={handleLanguageChange}
                             type="text"
                             placeholder="Agrega el idioma de la película"
+                            style={{ backgroundColor: "transparent", border: "2px solid white", color: "white", textAlign: "center", margin: "2px" }}
                         />
                         <input
                             className="input"
@@ -91,6 +96,7 @@ const Form = ({ addFilm }) => {
                             onChange={handleReleaseChange}
                             type="text"
                             placeholder="Agrega la fecha de lanzamiento de la película"
+                            style={{ backgroundColor: "transparent", border: "2px solid white", color: "white", textAlign: "center", margin: "2px" }}
                         />
                         <input
                             className="input"
@@ -98,11 +104,12 @@ const Form = ({ addFilm }) => {
                             onChange={handleCountryChange}
                             type="text"
                             placeholder="Agrega el país de la película"
+                            style={{ backgroundColor: "transparent", border: "2px solid white", color: "white", textAlign: "center", margin: "2px" }}
                         />
                     </div>
                     
                     <div className="column two wide" >
-                        <button type="submit" className="ui button circular icon" style={{ backgroundColor: "transparent", border: "2px solid cyan", color: "cyan", marginTop: "30px"}}><h3>Agregar Película</h3></button>
+                        <button type="submit" className="ui button circular icon btn" style={{ backgroundColor: "transparent", border: "2px solid cyan", color: "cyan", marginTop: "30px"}}><h3>Agregar Película</h3></button>
                     </div>
                 </div>
             </div>

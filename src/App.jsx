@@ -17,7 +17,7 @@ const App=() => {
 
   useEffect(() => {
     async function fetchData() {
-      const { data }=await films.get("/films");
+      const { data }= await films.get("/films");
       setFilmsList(data);
       setFilmsListSearched(filmsList);
     }
@@ -35,7 +35,7 @@ const App=() => {
     setFilmsList((oldList) => oldList.filter((item) => item._id!==id));
   };
 
-  const editTodo=async (id, item) => {
+  const editFilm=async (id, item) => {
     await films.put(`/films/${id}`, item);
   };
 
@@ -48,22 +48,25 @@ const App=() => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleChangeSearch = e => {
+
+  const handleChangeSearch= e => {
     setSearch(e.target.value);
     filtering(e.target.value);
   }
 
-
-
-  const filtering = (searchTerm) => {
-    var searchResult = filmsList.filter((element)=>{
-      if(element.title.toString().toLowerCase().includes(searchTerm.toLowerCase())){
+  const filtering=(searchTerm) => {
+    var searchResult=filmsList.filter((element) => {
+      if (element.title.toString().toLowerCase().includes(searchTerm.toLowerCase())) {
         return element;
       }
-    })
-    setFilmsListSearched(searchResult);
+    });
+    if (searchTerm==="") {
+      setFilmsListSearched(filmsList);
+    } else {
+      setFilmsListSearched(searchResult);
+    }
+    
   }
-
 
   return (
     <div className="App">
@@ -72,28 +75,6 @@ const App=() => {
           <img src="/vite.svg" alt="" style={{ maxHeight: "80px"}} />
           <img src="/videoclub.png" alt="" style={{ maxHeight: "40px", padding: "0 20px"}} />
         </div>
-        
-          {/* {width<=500? (
-          <nav className="nav">
-            <button onClick={() => setIsOpen(!isOpen)} className="hamburger">
-              <svg width="30" height="30" viewBox="0 0 24 24">
-                <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z" />
-              </svg>
-            </button>
-          </nav>
-        ):(
-        <nav className="nav">
-          <a href="#" className="link">Lista de Películas</a>
-          <a href="#" className="link">Agregar Película</a>
-        </nav>
-          )} */}
-{/*       
-        {isOpen&&(
-          <div className="menu">
-            <a href="#" className="link">Lista de Películas</a><br />
-            <a href="#" className="link">Agregar Película</a>
-          </div>
-        )} */}
       </header>
 
       <Section>
@@ -101,7 +82,7 @@ const App=() => {
       </Section>
 
       <Section>
-        <h3 >Esta es la interfaz de la empresa Videoclub donde se puede leer, crear, modificar y eliminar registros de la base de datos de películas.</h3>
+        <h3 >Esta es la interfaz de la empresa Videoclub donde se pueden leer, crear, modificar y eliminar registros de la base de datos de películas.</h3>
       </Section>
 
       <Section>
@@ -115,16 +96,16 @@ const App=() => {
           value={search}
           placeholder="Buscar por título"
           onChange={handleChangeSearch}
-          className="ui button circular icon"
-          style={{ backgroundColor: "transparent", border: "2px solid cyan", color: "cyan" }}
+          className="ui input circular icon"
+          style={{ backgroundColor: "transparent", border: "2px solid cyan", color: "cyan", textAlign: "center", padding: "17px", borderRadius: "30px" }}
         />
       </Section>
 
       <Section>
         <List
-          editTodoListProp={editTodo}
-          removeTodoListProp={removeFilm}
-          list={filmsListSearched}
+          editFilmListProp={editFilm}
+          removeFilmListProp={removeFilm}
+          list={filmsListSearched==""? filmsList : filmsListSearched}
         />
       </Section>
       

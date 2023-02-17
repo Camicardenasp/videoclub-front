@@ -19,6 +19,7 @@ const App=() => {
     async function fetchData() {
       const { data }= await films.get("/films");
       setFilmsList(data);
+      setFilmsListSearched(data);
     }
 
     fetchData();
@@ -27,28 +28,16 @@ const App=() => {
   const addFilm=async (item) => {
     const { data }=await films.post("/films", item);
     setFilmsList((oldList) => [...oldList, data]);
-    setFilmsListSearched((oldList) => [...oldList, data]);
   };
 
   const removeFilm=async (id) => {
     await films.delete(`/films/${id}`);
     setFilmsList((oldList) => oldList.filter((item) => item._id!==id));
-    setFilmsListSearched((oldList) => oldList.filter((item) => item._id!==id));
   };
 
   const editFilm=async (id, item) => {
     await films.put(`/films/${id}`, item);
   };
-
-  const [width, setWidth]=useState(window.innerWidth);
-  const [isOpen, setIsOpen]=useState(false);
-
-  useEffect(() => {
-    const handleResize=() => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
 
   const handleChangeSearch= e => {
     setSearch(e.target.value);
@@ -56,12 +45,13 @@ const App=() => {
   }
 
   const filtering=(searchTerm) => {
+    setFilmsListSearched(filmsList);
     var searchResult=filmsList.filter((element) => {
       if (element.title.toString().toLowerCase().includes(searchTerm.toLowerCase())) {
         return element;
       }
     });
-      setFilmsListSearched(searchResult);
+    setFilmsListSearched(searchResult);
   }
 
   return (
@@ -86,7 +76,7 @@ const App=() => {
         <i>(<b style={{ color: "cyan" }}>CRUD</b>, por sus siglas en inglés Create, Read, Update, Delete).</i>
       </Section>
       
-      <Section>
+      {/* <Section>
         <input
           type="text"
           value={search}
@@ -95,13 +85,13 @@ const App=() => {
           className="ui input circular icon"
           style={{ backgroundColor: "transparent", border: "2px solid cyan", color: "cyan", textAlign: "center", padding: "17px", borderRadius: "30px" }}
         />
-      </Section>
+      </Section> */}
 
       <Section>
         <List
           editFilmListProp={editFilm}
           removeFilmListProp={removeFilm}
-          list={filmsListSearched==""? filmsList : filmsListSearched}
+          list={filmsList}
         />
       </Section>
       

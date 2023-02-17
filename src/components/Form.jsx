@@ -31,9 +31,15 @@ const Form = ({ addFilm }) => {
     //It is an event handler that handles the submission of the form. When the user submits the form, this event handler takes the current values of the form fields (title, year, duration, language, date, and country) and passes them to the addFilm method to add a new element.
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        // if(inputValue.trim() === "") return;
-        
-        addFilm({ title: title, year: year, time: time, language: language, release: release, country: country, completed: false });
+
+        addFilm({ 
+            title: title, 
+            year: year, 
+            time: time, 
+            language: language, 
+            release: release, 
+            country: country, 
+            completed: false });
         setTitle("");
         setYear("");
         setTime("");

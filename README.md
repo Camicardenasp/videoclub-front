@@ -1,4 +1,4 @@
-# DESCRIPTION MoviesList
+# MoviesList
 
 ### Screenshots
  

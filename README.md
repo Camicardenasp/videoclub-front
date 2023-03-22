@@ -1,5 +1,17 @@
 # DESCRIPTION MoviesList
 
+### Screenshots
+ 
+ Movies Table
+ 
+![image](https://github.com/Camicardenasp/videoclub-front/blob/main/public/Readme%20Images/VideoclubTable.png)
+
+Movies Form
+
+![image](https://github.com/Camicardenasp/videoclub-front/blob/main/public/Readme%20Images/VideoClubForm.png)
+
+
+
 Authors: Camilo Cárdenas
          Alisson Álvarez
 
@@ -89,15 +101,4 @@ The libraries that were used for the construction of the project are:
 
     1. npm create vite@latest 
         Just like regular react project use this to create default react files with Vite.
-  
-### Screenshots
  
- Movies Table
- 
-![image](https://github.com/Camicardenasp/videoclub-front/blob/main/public/Readme%20Images/VideoclubTable.png)
-
-Movies Form
-
-![image](https://github.com/Camicardenasp/videoclub-front/blob/main/public/Readme%20Images/VideoClubForm.png)
-
-
